@@ -1,4 +1,4 @@
-import { HeaderLayout } from '~/components/Layout';
+import { HeaderLayout } from '~/components/Layouts';
 
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';

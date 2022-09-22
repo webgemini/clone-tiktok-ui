@@ -23,7 +23,24 @@
 }
 
 :root {
-  --primary: #fe2c55;
+  --colorPrimary: rgba(254, 44, 85, 1);
+  --colorLink: rgba(254, 44, 85, 1);
+  --colorPrimary2: rgba(22, 24, 35, 1);
+  --colorTextPrimary: rgba(22, 24, 35, 1);
+  --colorTextSecondary: rgba(22, 24, 35, 1);
+  --colorTextTertiary: rgba(22, 24, 35, 1);
+  --colorTextQuaternary: rgba(22, 24, 35, 1);
+  --colorBPrimary: #ffffff;
+
+
+  --default-layoutHeaderHeight: 60px;
+  --default-layoutWidth: 1150px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
