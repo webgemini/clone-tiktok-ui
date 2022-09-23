@@ -6,7 +6,7 @@ function NotFound() {
             <h1>404</h1>
             <p>Couldn't find this page</p>
             <p>Check out more trending videos on TikTok</p>
-            <Link href="/">
+            <Link to="/">
                 <span>Watch now</span>
             </Link>
         </div>

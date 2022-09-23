@@ -1,25 +1,25 @@
 @import 'normalize.css';
 :root {
-  --tux-fontFamilyHeading: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
-  --tux-fontFamilyParagraph: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+  --fontFamilyHeading: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+  --fontFamilyParagraph: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
 
-  --tux-fontWeightRegular: 400;
-  --tux-fontWeightSemibold: 600;
-  --tux-fontWeightBold: 700;
+  --fontWeightRegular: 400;
+  --fontWeightSemibold: 600;
+  --fontWeightBold: 700;
 
-  --tux-fontSizeH1: 96px;
-  --tux-fontSizeH2: 72px;
-  --tux-fontSizeH3: 56px;
-  --tux-fontSizeH4: 48px;
-  --tux-fontSizeH5: 32px;
-  --tux-fontSizeH6: 24px;
-  --tux-fontSizeH7: 18px;
+  --fontSizeH1: 96px;
+  --fontSizeH2: 72px;
+  --fontSizeH3: 56px;
+  --fontSizeH4: 48px;
+  --fontSizeH5: 32px;
+  --fontSizeH6: 24px;
+  --fontSizeH7: 18px;
 
-  --tux-fontSizeP1: 24px;
-  --tux-fontSizeP2: 18px;
-  --tux-fontSizeP3: 16px;
-  --tux-fontSizeP4: 14px;
-  --tux-fontSizeP5: 12px;
+  --fontSizeP1: 24px;
+  --fontSizeP2: 18px;
+  --fontSizeP3: 16px;
+  --fontSizeP4: 14px;
+  --fontSizeP5: 12px;
 }
 
 :root {
@@ -27,11 +27,20 @@
   --colorLink: rgba(254, 44, 85, 1);
   --colorPrimary2: rgba(22, 24, 35, 1);
   --colorTextPrimary: rgba(22, 24, 35, 1);
-  --colorTextSecondary: rgba(22, 24, 35, 1);
-  --colorTextTertiary: rgba(22, 24, 35, 1);
-  --colorTextQuaternary: rgba(22, 24, 35, 1);
+  --colorTextSecondary: rgba(22, 24, 35, .75);
+  --colorTextTertiary: rgba(22, 24, 35, .5);
+  --colorTextQuaternary: rgba(22, 24, 35, .34);
+  --colorTextWhite: rgba(255, 255, 255, 1);
+  --colorTextWhite2: rgba(255, 255, 255, .9);
+  --colorTextWhite3: rgba(255, 255, 255, .75);
+  --colorTextWhite4: rgba(255, 255, 255, .5);
+  --colorTextWhite5: rgba(255, 255, 255, .34);
   --colorBPrimary: #ffffff;
-
+  --colorBHover: rgba(22, 24, 35, .06);
+  --colorLineAl05: rgba(22, 24, 35, .5);
+  --colorLinePrimary: rgba(22, 24, 35, .2);
+  --colorLineSecondary: rgba(22, 24, 35, .12);
+  --colorDisabled: rgba(22, 24, 35, .5);
 
   --default-layoutHeaderHeight: 60px;
   --default-layoutWidth: 1150px;
@@ -48,10 +57,19 @@ html {
 }
 
 body {
-  font-family: "IBM Plex Sans",ProximaNova,Arial,Tahoma,PingFangSC,sans-serif;
+  font-family: ProximaNova,Arial,Tahoma,PingFangSC,sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizespeed;
+}
+
+button, input, [tabindex] {
+  outline: none;
+  border: none;
+}
+a[href] {
+  text-decoration: none;
+  color: var(--colorTextPrimary);
 }
 
 @font-face {
