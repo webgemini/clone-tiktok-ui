@@ -10,7 +10,7 @@ import NotFound from '~/pages/404';
 const publicRoutes = [
     { path: '/', component: Home },
     { path: '/following', component: Following },
-    { path: '/profile', component: Profile },
+    { path: '/@:username', component: Profile },
     { path: '/search', component: Search },
     { path: '/upload', component: Upload, layout: HeaderLayout },
     { path: '/*', component: NotFound, layout: HeaderLayout },
