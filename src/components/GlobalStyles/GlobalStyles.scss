@@ -1,4 +1,53 @@
 @import 'normalize.css';
+
+@font-face {
+  font-family: "SofiaPro";
+  src: url('/assets/fonts/sofiapro-bold.woff2')
+      format("woff2"),
+  url('/assets/fonts/sofiapro-bold.woff')
+      format("woff"),
+  url('/assets/fonts/sofiapro-bold.otf')
+      format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url('/assets/fonts/Proxima-Nova-Regular.woff2')
+      format("woff2"),
+  url('/assets/fonts/Proxima-Nova-Regular.woff')
+      format("woff"),
+  url('/assets/fonts/Proxima-Nova-Regular.otf')
+      format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url('/assets/fonts/Proxima-Nova-Semibold.woff2')
+      format("woff2"),
+  url('/assets/fonts/Proxima-Nova-Semibold.woff')
+      format("woff"),
+  url('/assets/fonts/Proxima-Nova-Semibold.otf')
+      format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url('/assets/fonts/Proxima-Nova-Bold.woff2')
+      format("woff2"),
+  url('/assets/fonts/Proxima-Nova-Bold.woff')
+      format("woff"),
+  url('/assets/fonts/Proxima-Nova-Bold.otf')
+      format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   --fontFamilyHeading: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
   --fontFamilyParagraph: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
@@ -37,6 +86,7 @@
   --colorTextWhite5: rgba(255, 255, 255, .34);
   --colorBPrimary: #ffffff;
   --colorBHover: rgba(22, 24, 35, .06);
+  --colorBHover2: rgba(22, 24, 35, .03);
   --colorLineAl05: rgba(22, 24, 35, .5);
   --colorLinePrimary: rgba(22, 24, 35, .2);
   --colorLineSecondary: rgba(22, 24, 35, .12);
@@ -72,50 +122,16 @@ a[href] {
   color: var(--colorTextPrimary);
 }
 
-@font-face {
-  font-family: "SofiaPro";
-  src: url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/sofiapro-bold.woff2)
-      format("woff2"),
-  url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/sofiapro-bold.woff)
-      format("woff"),
-  url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/sofiapro-bold.otf)
-      format("opentype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "ProximaNova";
-  src: url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Regular.woff2)
-      format("woff2"),
-  url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Regular.woff)
-      format("woff"),
-  url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Regular.otf)
-      format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "ProximaNova";
-  src: url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Semibold.woff2)
-      format("woff2"),
-  url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Semibold.woff)
-      format("woff"),
-  url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Semibold.otf)
-      format("opentype");
+body .tippy-box {
+  font-size: 1.6rem;
+  line-height: 22px;
   font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "ProximaNova";
-  src: url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Bold.woff2)
-      format("woff2"),
-  url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Bold.woff)
-      format("woff"),
-  url(//lf16-tiktok-common.ttwstatic.com/obj/tiktok-web-common-sg/falcon/tiktok_fonts/Proxima-Nova-Bold.otf)
-      format("opentype");
-  font-weight: 700;
-  font-style: normal;
+  border-radius: 8px;
+  background-color: rgba(84, 84, 84, 0.92);
+  .tippy-content {
+    padding: 8px
+  }
+  .tippy-arrow {
+    color: rgba(84, 84, 84, 0.92);
+  }
 }

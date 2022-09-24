@@ -14,6 +14,8 @@
   flex-direction: row;
   width: var(--default-layoutWidth);
   height: 100%;
+  padding-right: 24px;
+  padding-left: 24px;
 }
 .logo {
   display: block;
@@ -132,16 +134,27 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-}
-.more-icon-btn {
-  position: relative;
-  margin-left: 16px;
-  cursor: pointer;
-  padding: 0 4px;
-  color: var(--colorPrimary2);
-  svg {
-    width: 20px;
-    height: 20px;
-    color: inherit;
+  .more-icon-btn {
+    position: relative;
+    margin-left: 16px;
+    cursor: pointer;
+    padding: 0 4px;
+    color: var(--colorPrimary2);
+    svg {
+      width: 20px;
+      height: 20px;
+      color: inherit;
+    }
+  }
+  .message--icon span svg, .inbox--icon span svg {
+    display: block;
+    margin-right: 0;
+  }
+  .user-avatar {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    margin-left: 24px;
+    border-radius: 50%;
   }
 }

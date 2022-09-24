@@ -1,0 +1,44 @@
+.container {
+  width: 223px;
+  .item {
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px 8px 10px 16px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--colorPrimary2);
+    margin-left: 0;
+    border-radius: 0;
+    font-family: "IBM Plex Sans", ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    background: var(--colorBPrimary);
+    &:hover {
+      background: var(--colorBHover2);
+    }
+    &.separate {
+      border-top: 1px solid var(--colorLineSecondary);
+    }
+  }
+}
+.popper-menu {
+  padding: 8px 0;
+}
+.header-language {
+  position: relative;
+  height: 50px;
+  .back-btn {
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+    background: transparent;
+  }
+  .header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 22px;
+    color: inherit;
+  }
+}

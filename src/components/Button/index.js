@@ -1,17 +1,17 @@
+import { forwardRef } from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Button({ types, customClass, className, children, ...passProps }) {
+function Button(
+    { types, customClass, className, children, to, href, tagDiv, leftIcon, rightItem, onClick, ...passProps },
+    ref,
+) {
     let Comp = 'button';
-    const classes = cx('wrapper', {
-        [types]: types,
-        [customClass]: customClass,
-        [className]: className,
-    });
     const props = {
+        onClick,
         ...passProps,
     };
 
@@ -22,20 +22,27 @@ function Button({ types, customClass, className, children, ...passProps }) {
             }
         });
     }
-    if (props.to) {
+    if (to) {
+        props.to = to;
         Comp = Link;
-    } else if (props.href) {
+    } else if (href) {
+        props.href = href;
         Comp = 'a';
-    } else if (props.tagDiv) {
+    } else if (tagDiv) {
         Comp = 'div';
-    } else {
-        Comp = 'span';
     }
+    const classes = cx('wrapper', {
+        [types]: types,
+        [customClass]: customClass,
+        [className]: className,
+    });
     return (
-        <Comp className={classes}>
+        <Comp ref={ref} className={classes} {...props}>
+            {leftIcon && leftIcon}
             <span>{children}</span>
+            {rightItem && rightItem}
         </Comp>
     );
 }
 
-export default Button;
+export default forwardRef(Button);

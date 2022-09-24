@@ -20,6 +20,9 @@
     user-select: none;
     -webkit-user-select: none;
   }
+  svg {
+    margin-right: 8px;
+  }
 }
 .around {
   color: var(--colorPrimary2);
@@ -60,10 +63,6 @@
   height: 36px;
   min-width: 110px;
   padding: 0 16px;
-  svg {
-    font-size: 2rem;
-    margin-right: 8px;
-  }
 }
 .getApp--btn {
   min-width: 90px;
