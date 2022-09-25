@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Header from '~/layouts/components/Header';
 
 function HeaderLayout({ children }) {
@@ -10,5 +11,9 @@ function HeaderLayout({ children }) {
         </div>
     );
 }
+
+HeaderLayout.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default HeaderLayout;
