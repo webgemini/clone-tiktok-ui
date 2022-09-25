@@ -9,7 +9,7 @@ import styles from './Search.module.scss';
 import { PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon, LoadingIcon } from '~/components/Icons';
-import { fakeApi } from '~/components/Contains/';
+import * as searchServices from '~/apiServices/searchServices';
 
 const cx = classNames.bind(styles);
 
@@ -23,16 +23,13 @@ function Search() {
 
     useEffect(() => {
         if (debounce !== '') {
-            setLoading(true);
-            fetch(`${fakeApi} ${encodeURIComponent(debounce)}&type=less`)
-                .then((res) => res.json())
-                .then((res) => {
-                    setSearchResult(res.data);
-                    setLoading(false);
-                })
-                .catch(() => {
-                    setLoading(false);
-                });
+            const fetchApi = async () => {
+                setLoading(true);
+                const result = await searchServices.searchApi(debounce);
+                setSearchResult(result);
+                setLoading(false);
+            };
+            fetchApi();
         } else if (debounce === '') {
             setSearchResult([]);
             return;
