@@ -6,18 +6,18 @@ import styles from './Image.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Image({ className, src, alt, fallback, ...props }, ref) {
+function Image({ className, src, alt, fallback = images.noImg, ...props }, ref) {
     const [_fallback, setFallback] = useState('');
 
     const handleError = () => {
-        setFallback(images.noImg);
+        setFallback(fallback);
     };
 
     return (
         <img
             ref={ref}
             className={cx('wrapper', className)}
-            src={src || fallback || _fallback}
+            src={_fallback || src}
             alt={alt}
             {...props}
             onError={handleError}

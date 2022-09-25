@@ -10,16 +10,16 @@ const cx = classNames.bind(styles);
 
 function AccountItem({ data }) {
     return (
-        <Link to={`@${data.username}`} className={cx('wrapper-item')}>
+        <Link to={`@${data.nickname}`} className={cx('wrapper-item')}>
             <span className={cx('container-avatar')}>
-                <Image className={cx('img-avatar')} src="" alt={data.name} />
+                <Image className={cx('img-avatar')} src={data.avatar} alt={data.full_name} />
             </span>
             <div className={cx('item-content')}>
                 <h4 className={cx('item-title')}>
-                    {data.name}
-                    <FontAwesomeIcon icon={faCheckCircle} />
+                    {data.full_name}
+                    {data.tick && <FontAwesomeIcon icon={faCheckCircle} />}
                 </h4>
-                <p className={cx('item-desc')}>{data.username}</p>
+                <p className={cx('item-desc')}>{data.nickname}</p>
             </div>
         </Link>
     );

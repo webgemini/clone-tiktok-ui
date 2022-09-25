@@ -66,3 +66,5 @@ export const userMenu = [
     ...MENU_ITEMS,
     { icon: <LogoutIcon />, title: 'Log out', to: '/logout', separate: true },
 ];
+
+export { fakeApi, fakeApiBackUp } from './FakeAPI';

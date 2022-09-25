@@ -2,12 +2,14 @@ import { useEffect, useState, useRef } from 'react';
 import classNames from 'classnames/bind';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
+import { useDebounce } from '~/hooks';
 import styles from './Search.module.scss';
 import { PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon, LoadingIcon } from '~/components/Icons';
+import { fakeApi } from '~/components/Contains/';
 
 const cx = classNames.bind(styles);
 
@@ -17,21 +19,26 @@ function Search() {
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
     const inputRef = useRef();
+    const debounce = useDebounce(searchValue, 800);
 
     useEffect(() => {
-        if (searchValue !== '') {
+        if (debounce !== '') {
             setLoading(true);
-            fetch(`https://jsonplaceholder.typicode.com/users?q=${encodeURIComponent(searchValue)}&type=more`)
+            fetch(`${fakeApi} ${encodeURIComponent(debounce)}&type=less`)
                 .then((res) => res.json())
                 .then((res) => {
-                    setSearchResult(res);
+                    setSearchResult(res.data);
                     setLoading(false);
                 })
                 .catch(() => {
-                    console.log(Error);
+                    setLoading(false);
                 });
+        } else if (debounce === '') {
+            setSearchResult([]);
+            return;
         }
-    }, [searchValue]);
+    }, [debounce]);
+
     const handleOnChangeInput = (e) => {
         if (e.target.value.startsWith(' ') && e.target.value.startsWith('')) {
             return false;
