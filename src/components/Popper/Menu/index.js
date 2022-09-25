@@ -10,7 +10,7 @@ import Language from './Language';
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     const currentMenu = history[history.length - 1];
     const renderItems = () => {
@@ -38,6 +38,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
             offset={[12, 10]}
             delay={[0, 700]}
             placement="bottom-end"
+            hideOnClick={hideOnClick}
             render={(attrs) => (
                 <div className={cx('container')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('popper-menu')}>
@@ -49,7 +50,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('language-content')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}

@@ -82,6 +82,18 @@ export const InboxIcon = ({ className, width = '3.2rem', height = '3.2rem' }) =>
 );
 
 // Menu Icons
+export const TopArrowIcon = ({ className, width = '2.4rem', height = '0.8rem' }) => {
+    <svg
+        className={className}
+        width={width}
+        height={height}
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 24 8"
+    >
+        <path d="M0 8c7 0 10-8 12-8s5 8 12 8z"></path>
+    </svg>;
+};
 export const PersonUserIcon = ({ className, width = '2rem', height = '2rem' }) => (
     <svg
         className={className}

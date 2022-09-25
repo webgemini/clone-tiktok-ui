@@ -9,7 +9,7 @@ import styles from './Search.module.scss';
 import { PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon, LoadingIcon } from '~/components/Icons';
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/services/searchService';
 
 const cx = classNames.bind(styles);
 
@@ -37,10 +37,11 @@ function Search() {
     }, [debounce]);
 
     const handleOnChangeInput = (e) => {
-        if (e.target.value.startsWith(' ') && e.target.value.startsWith('')) {
+        const searchInputValue = e.target.value;
+        if (searchInputValue.startsWith(' ') && searchInputValue.startsWith('')) {
             return false;
         }
-        setSearchValue(e.target.value);
+        setSearchValue(searchInputValue);
     };
     const handleClear = () => {
         setSearchValue('');
@@ -83,7 +84,7 @@ function Search() {
                     {loading && <LoadingIcon className={cx('loading')} />}
                 </div>
                 <span className={cx('splitter')}></span>
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                     <SearchIcon />
                 </button>
             </form>

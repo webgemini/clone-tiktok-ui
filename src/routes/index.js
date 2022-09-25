@@ -1,4 +1,5 @@
-import { HeaderLayout } from '~/components/Layouts';
+import { HeaderLayout } from '~/layouts/';
+import config from '~/config';
 
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
@@ -8,12 +9,12 @@ import Upload from '~/pages/Upload';
 import NotFound from '~/pages/404';
 
 const publicRoutes = [
-    { path: '/', component: Home },
-    { path: '/following', component: Following },
-    { path: '/@:username', component: Profile },
-    { path: '/search', component: Search },
-    { path: '/upload', component: Upload, layout: HeaderLayout },
-    { path: '/*', component: NotFound, layout: HeaderLayout },
+    { path: config.routes.home, component: Home },
+    { path: config.routes.following, component: Following },
+    { path: config.routes.profile, component: Profile },
+    { path: config.routes.search, component: Search },
+    { path: config.routes.upload, component: Upload, layout: HeaderLayout },
+    { path: config.routes.error, component: NotFound, layout: HeaderLayout },
 ];
 
 const privateRoutes = [];

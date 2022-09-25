@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
+  margin-top: var(--default-layoutHeaderHeight);
 }
 .container {
   display: flex;

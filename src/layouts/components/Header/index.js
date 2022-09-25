@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Header.module.scss';
+import config from '~/config';
 import 'tippy.js/dist/tippy.css';
 import images from '~/assets/images';
 import Search from '../Search';
@@ -26,7 +27,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('container')}>
-                <Link className={cx('logo')} to="/">
+                <Link className={cx('logo')} to={config.routes.home}>
                     <img src={images.logo} alt="Tiktok" />
                 </Link>
                 <div className={cx('container-center')}>

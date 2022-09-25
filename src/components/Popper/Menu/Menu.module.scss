@@ -17,14 +17,22 @@
     &.separate {
       border-top: 1px solid var(--colorLineSecondary);
     }
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 }
 .popper-menu {
+  display: flex;
+  flex-direction: column;
   padding: 8px 0;
 }
 .header-language {
   position: relative;
   height: 50px;
+  flex-shrink: 0;
   .back-btn {
     width: 50px;
     height: 100%;
@@ -41,4 +49,7 @@
     line-height: 22px;
     color: inherit;
   }
+}
+.language-content {
+  overflow-y: auto;
 }
