@@ -1,0 +1,22 @@
+.nav-container {
+  position: relative;
+  width: 356px;
+  flex: 0 0 356px;
+}
+.scroll-container {
+  // position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  padding-right: 8px;
+  z-index: 9;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100%;
+  padding: 20px 0 26px 8px;
+}

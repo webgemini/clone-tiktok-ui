@@ -1,0 +1,30 @@
+.wrapper {
+  position: relative;
+  padding-top: 16px;
+  padding-left: 8px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 8px;
+    left: 8px;
+    height: 1px;
+    background-color: var(--colorLineSecondary);
+    transform: scaleY(0.5);
+  }
+}
+
+.link-container {
+  margin-bottom: 8px;
+}
+.nav-link,
+.copyright {
+  display: inline-block;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-right: 6px;
+  font-family: var(--fontFamilyProximaNova);
+  color: var(--colorTextTertiary);
+}

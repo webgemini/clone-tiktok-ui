@@ -49,8 +49,8 @@
 }
 
 :root {
-  --fontFamilyHeading: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
-  --fontFamilyParagraph: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+  --fontFamilySofiaPro: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+  --fontFamilyProximaNova: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
 
   --fontWeightRegular: 400;
   --fontWeightSemibold: 600;
@@ -113,6 +113,7 @@ body {
   text-rendering: optimizespeed;
   direction: ltr;
   overscroll-behavior: contain;
+  overflow-y: overlay;
 }
 
 html *::-webkit-scrollbar {
@@ -121,7 +122,7 @@ html *::-webkit-scrollbar {
 }
 html *::-webkit-scrollbar-track {
   border-radius: 0;
-  background: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
 }
 html *::-webkit-scrollbar-thumb {
   border-radius: 4px;
@@ -132,7 +133,7 @@ button, input, [tabindex] {
   outline: none;
   border: none;
 }
-a[href] {
+a {
   text-decoration: none;
   color: var(--colorTextPrimary);
 }

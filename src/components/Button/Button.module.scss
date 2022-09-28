@@ -29,7 +29,7 @@
   border-radius: 999px;
 }
 .primary {
-  font-family: SofiaPro,PingFangSC,sans-serif;
+  font-family: var(--fontFamilyProximaNova);
   color: var(--colorTextWhite);
   background-color: var(--colorPrimary);
   user-select: none;
@@ -40,7 +40,7 @@
 }
 .outlinePrimary {
   color: var(--colorPrimary);
-  border: currentColor;
+  border: 1px solid currentColor;
   &:hover {
     background-color: rgba(254, 44, 85, 0.06);
   }

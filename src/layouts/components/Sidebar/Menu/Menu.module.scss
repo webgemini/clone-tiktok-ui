@@ -1,0 +1,24 @@
+.nav-container {
+  margin-bottom: 8px;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px;
+  border-radius: 4px;
+  color: var(--colorPrimary2);
+  transition: background-color ease-in-out 200ms;
+  &.active {
+    color: var(--colorPrimary);
+  }
+  &:hover {
+    background-color: var(--colorBHover2);
+  }
+}
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  margin-left: 8px;
+}

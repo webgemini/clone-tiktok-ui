@@ -1,0 +1,37 @@
+.container {
+  position: relative;
+  padding: 16px 0;
+  color: var(--colorTextSecondary);
+  font-family: var(--fontFamilyProximaNova);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 8px;
+    left: 8px;
+    height: 1px;
+    background-color: var(--colorLineSecondary);
+    transform: scaleY(0.5);
+  }
+}
+.label {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  padding: 0 8px;
+  margin-bottom: 8px;
+}
+.show-more {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 8px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.see-more {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: var(--colorPrimary);
+  font-family: var(--fontFamilyProximaNova);
+}

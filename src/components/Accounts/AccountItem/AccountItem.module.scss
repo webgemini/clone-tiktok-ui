@@ -1,0 +1,141 @@
+.user-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 200ms ease-in-out;
+  &:hover {
+    background-color: var(--colorBHover2);
+  }
+}
+.wrapper-avatar {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex: 0 0 48px;
+}
+.container-avatar {
+  width: 32px;
+  height: 32px;
+}
+.container-avatar,
+.profile-avatar {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  line-height: 32px;
+  color: #fff;
+  font-feature-settings: "tnum";
+  vertical-align: middle;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: rgba(136, 136, 136, 0.5);
+  border-width: 0.5px;
+  border-color: var(--colorLineSecondary);
+  cursor: pointer;
+}
+.img-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.link-content {
+  flex-grow: 1;
+  height: 32px;
+}
+.title-content,
+.profile-title {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.title-item, .desc-item {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.title-item,
+.profile-title {
+  width: 100%;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  font-weight: 700;
+  font-family: var(--fontFamilySofiaPro);
+  color: var(--colorTextPrimary);
+  svg {
+    font-size: 1.4rem;
+    color: rgb(32, 213, 236);
+    margin-left: 4px;
+  }
+}
+.desc-item {
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: var(--colorTextSecondary);
+  font-family: var(--fontFamilyProximaNova);
+}
+
+.profile-container {
+  position: relative;
+  width: 320px;
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--colorBPrimary);
+  box-shadow: 0px 4px 16px rgba(0 0 0 / 12%);
+}
+.head-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.profile-link {
+  display: block;
+  width: 44px;
+}
+.profile-avatar {
+  width: 44px;
+  height: 44px;
+}
+.profile-btn {
+  min-width: 106px;
+  min-height: 28px;
+  padding: 6px 8px;
+}
+.profile-title {
+  font-size: 1.8rem;
+}
+.profile-desc {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: var(--colorTextPrimary);
+  font-family: var(--fontFamilyProximaNova);
+}
+.profile-index {
+  margin-top: 8px;
+}
+.follows-count,
+.likes-count {
+  display: inline-block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 2rem;
+  margin-right: 6px;
+}
+.follow-label {
+  margin-right: 12px;
+}
+.follow-label,
+.likes-label {
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: var(--colorTextSecondary);
+}
