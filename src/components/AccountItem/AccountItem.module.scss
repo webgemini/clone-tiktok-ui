@@ -7,21 +7,10 @@
     background: rgba(22, 24, 35, 0.03);
   }
 }
-.container-avatar {
-  display: inline-block;
+.search-avatar {
   width: 40px;
   height: 40px;
   margin-right: 12px;
-  color: rgb(255, 255, 255);
-  border-radius: 50%;
-  text-align: center;
-  background-color: rgba(136, 136, 136, 0.5);
-}
-.img-avatar {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
 }
 .item-content {
   flex: 0 1 auto;

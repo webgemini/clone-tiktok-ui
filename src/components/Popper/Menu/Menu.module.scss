@@ -33,11 +33,13 @@
   position: relative;
   height: 50px;
   flex-shrink: 0;
+  color: var(--colorPrimary2);
   .back-btn {
     width: 50px;
     height: 100%;
     cursor: pointer;
     background: transparent;
+    float: left;
   }
   .header-title {
     position: absolute;

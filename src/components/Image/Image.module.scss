@@ -1,3 +1,19 @@
-.wrapper {
+.container-avatar {
+  display: inline-block;
+  text-align: center;
+  line-height: 32px;
+  color: #fff;
+  font-feature-settings: "tnum";
+  vertical-align: middle;
+  border-radius: 50%;
   overflow: hidden;
+  background-color: rgba(136, 136, 136, 0.5);
+  border-width: 0.5px;
+  border-color: var(--colorLineSecondary);
+  cursor: pointer;
+}
+.img-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

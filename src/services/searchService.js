@@ -10,6 +10,7 @@ export const searchApi = async (q, type = 'less') => {
         });
         return res.data;
     } catch (err) {
-        console.log(err.message);
+        console.error('SOCKET_RESPONSE_ERROR');
+        return false;
     }
 };

@@ -7,7 +7,7 @@ import styles from './Image.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Image = forwardRef(({ className, src, alt, fallback, ...props }, ref) => {
+const Image = forwardRef(({ src, alt, fallback, className, width, height, ...props }, ref) => {
     const [_fallback, setFallback] = useState('');
 
     const handleError = () => {
@@ -15,14 +15,17 @@ const Image = forwardRef(({ className, src, alt, fallback, ...props }, ref) => {
     };
 
     return (
-        <img
-            ref={ref}
-            className={cx('wrapper', className)}
-            src={fallback || _fallback || src}
-            alt={alt}
-            {...props}
-            onError={handleError}
-        />
+        <span className={cx('container-avatar', className)} style={{ width: width, height: height }}>
+            <img
+                ref={ref}
+                className={cx('img-avatar')}
+                src={fallback || _fallback || src}
+                alt={alt}
+                {...props}
+                onError={handleError}
+                loading="lazy"
+            />
+        </span>
     );
 });
 
