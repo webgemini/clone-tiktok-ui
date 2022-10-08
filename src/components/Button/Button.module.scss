@@ -82,3 +82,11 @@
     background-color: var(--colorBPrimary);
   }
 }
+
+@media screen and (max-width: 47.9375em) {
+  .upload--btn {
+    height: 36px;
+    min-width: 100px;
+    padding: 0 8px;
+  }
+}

@@ -34,3 +34,9 @@
   font-family: var(--fontFamilyProximaNova);
   color: var(--colorTextTertiary);
 }
+
+@media screen and (max-width: 67.5em) {
+  .wrapper {
+    display: none;
+  }
+}

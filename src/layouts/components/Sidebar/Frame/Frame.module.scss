@@ -32,3 +32,9 @@
   border-color: var(--colorPrimary);
   background-color: var(--colorBPrimary);
 }
+
+@media screen and (max-width: 67.5em) {
+  .container {
+    display: none;
+  }
+}

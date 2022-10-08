@@ -22,3 +22,9 @@
   line-height: 2.5rem;
   margin-left: 8px;
 }
+
+@media screen and (max-width: 67.5em) {
+  .title {
+    display: none;
+  }
+}

@@ -70,3 +70,11 @@
     border-radius: 50%;
   }
 }
+
+@media screen and (max-width: 47.9375em) {
+  .container {
+    width: 100vw;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}

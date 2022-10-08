@@ -126,7 +126,7 @@ html *::-webkit-scrollbar-track {
 }
 html *::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background-color: var(--colorBHover);
+  background-color: rgba(22, 24, 35, .06);
 }
 
 button, input, [tabindex] {

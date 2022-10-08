@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { forwardRef, useState } from 'react';
+import { forwardRef, useState, memo } from 'react';
 import classNames from 'classnames/bind';
 
 import images from '~/assets/images';
@@ -36,4 +36,4 @@ Image.propTypes = {
     fallback: PropTypes.string,
 };
 
-export default Image;
+export default memo(Image);

@@ -56,6 +56,7 @@ function Search() {
         <HeadlessTippy
             interactive
             visible={showResult && searchResult.length > 0}
+            zIndex={18}
             render={(attrs) => (
                 <div className={cx('wrapper-search')} tabIndex="-1" {...attrs}>
                     <PopperWrapper>

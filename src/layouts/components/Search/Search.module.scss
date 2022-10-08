@@ -116,3 +116,14 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@media (min-width:45.6875em) and ( max-width: 67.5em) {
+  .form-element {
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 45.625em) {
+  .form-element {
+    display: none;
+  }
+}

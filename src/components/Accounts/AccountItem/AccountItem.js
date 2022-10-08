@@ -1,76 +1,42 @@
 import PropTypes from 'prop-types';
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
 import styles from './AccountItem.module.scss';
 import Image from '~/components/Image';
-import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
-function AccountItem({ data, style }) {
+function AccountItem({ data, classNameLAvatar, classNameLInfo, classNameTitle, classNameDesc }) {
     return (
-        <div style={style} className={cx('account-item')}>
-            <Tippy
-                interactive
-                placement="bottom-end"
-                offset={[-20, 2]}
-                delay={[600, 300]}
-                render={(attrs) => (
-                    <div className={cx('profile-container')} tabIndex="-1" {...attrs}>
-                        <div className={cx('head-container')}>
-                            <Link to={`/@${data.nickname}`} className={cx('profile-link')}>
-                                <Image className={cx('profile-avatar')} src={data.avatar} alt={data.full_name} />
-                            </Link>
-                            <Button types="primary" className={cx('profile-btn')}>
-                                Follow
-                            </Button>
-                        </div>
-                        <Link to={`/@${data.nickname}`} className={cx('profile-title')} target="_blank">
-                            <h4 className={cx('profile-title')}>
-                                {data.full_name}
-                                {data.tick && <FontAwesomeIcon icon={faCheckCircle} />}
-                            </h4>
-                        </Link>
-                        <Link to={`/@${data.nickname}`} className={cx('profile-desc')} target="_blank">
-                            {data.nickname}
-                        </Link>
-                        <p className={cx('profile-index')}>
-                            <span className={cx('follows-count')}>{data.followers_count}</span>
-                            <span className={cx('follow-label')}>Followers</span>
-                            <span className={cx('likes-count')}>{data.likes_count}</span>
-                            <span className={cx('likes-label')}>Likes</span>
-                        </p>
-                    </div>
-                )}
-            >
-                <div className={cx('user-container')}>
-                    <Link to={`/@${data.nickname}`}>
-                        <div className={cx('wrapper-avatar')}>
-                            <Image className={cx('account-avatar')} src={data.avatar} alt={data.full_name} />
-                        </div>
-                    </Link>
-                    <Link to={`/@${data.nickname}`} className={cx('link-content')}>
-                        <div className={cx('title-content')}>
-                            <h4 className={cx('title-item')}>
-                                {data.full_name}
-                                {data.tick && <FontAwesomeIcon icon={faCheckCircle} />}
-                            </h4>
-                        </div>
-                        <p className={cx('desc-item')}>{data.nickname}</p>
-                    </Link>
+        <>
+            <Link to={`/@${data.nickname}`} className={cx('avatar-link', { [classNameLAvatar]: classNameLAvatar })}>
+                <div className={cx('wrapper-avatar')}>
+                    <Image className={cx('account-avatar')} src={data.avatar} alt={data.full_name} />
                 </div>
-            </Tippy>
-        </div>
+            </Link>
+            <Link to={`/@${data.nickname}`} className={cx('link-content', { [classNameLInfo]: classNameLInfo })}>
+                <div className={cx('title-content')}>
+                    <h3 className={cx('title-item', { [classNameTitle]: classNameTitle })}>
+                        {data.full_name}
+                        {data.tick && <FontAwesomeIcon icon={faCheckCircle} />}
+                    </h3>
+                </div>
+                <h4 className={cx('desc-item', { [classNameDesc]: classNameDesc })}>{data.nickname}</h4>
+            </Link>
+        </>
     );
 }
 
 AccountItem.propTypes = {
     data: PropTypes.object.isRequired,
-    style: PropTypes.object,
+    classNameLAvatar: PropTypes.string,
+    classNameLInfo: PropTypes.string,
+    classNameTitle: PropTypes.string,
+    classNameDesc: PropTypes.string,
 };
 
-export default AccountItem;
+export default memo(AccountItem);

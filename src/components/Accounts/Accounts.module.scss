@@ -20,6 +20,20 @@
   padding: 0 8px;
   margin-bottom: 8px;
 }
+
+.user-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 200ms ease-in-out;
+  &:hover {
+    background-color: var(--colorBHover2);
+  }
+}
+
 .show-more {
   display: flex;
   align-items: center;
@@ -34,4 +48,16 @@
   font-weight: 600;
   color: var(--colorPrimary);
   font-family: var(--fontFamilyProximaNova);
+}
+
+@media screen and (max-width: 67.5em) {
+  .container {
+    padding: 8px 0;
+  }
+  .label {
+    display: none;
+  }
+  .show-more {
+    display: none;
+  }
 }

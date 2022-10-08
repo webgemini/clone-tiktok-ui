@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 
@@ -15,7 +15,8 @@ const defaultFn = () => {};
 function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     const currentMenu = history[history.length - 1];
-    const renderItems = () => {
+    const historyLength = useMemo(() => history.length - 1, [history]);
+    const renderItems = useCallback(() => {
         return currentMenu.data.map((item, index) => {
             const isParent = !!item.subMenu;
             return (
@@ -32,13 +33,13 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                 />
             );
         });
-    };
+    }, [currentMenu, onChange]);
     const handleReset = () => {
         setHistory((prev) => prev.slice(0, 1));
     };
-    const handleBack = () => {
-        setHistory((prev) => prev.slice(0, history.length - 1));
-    };
+    const handleBack = useCallback(() => {
+        setHistory((prev) => prev.slice(0, historyLength));
+    }, [historyLength]);
     const renderResult = (attrs) => (
         <div className={cx('container')} tabIndex="-1" {...attrs}>
             <TopArrowIcon data-popper-arrow="" className={cx('top-arrow-icon')} />
@@ -56,6 +57,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             delay={[0, 700]}
             placement="bottom-end"
             arrow
+            zIndex={16}
             hideOnClick={hideOnClick}
             render={renderResult}
             onHide={handleReset}

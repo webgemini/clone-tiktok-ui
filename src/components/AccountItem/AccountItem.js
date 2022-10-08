@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -29,4 +30,4 @@ AccountItem.propTypes = {
     className: PropTypes.string,
 };
 
-export default AccountItem;
+export default memo(AccountItem);
