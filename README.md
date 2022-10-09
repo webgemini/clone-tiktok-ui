@@ -1,3 +1,15 @@
+# Preview
+
+![tiktokui_preview1](https://user-images.githubusercontent.com/41688351/194778106-ad9f4bcc-a47c-4a12-88c3-0ac4e809fbb8.PNG)
+
+-   Preview Page: https://webgemini.github.io/clone-tiktok-ui
+
+# Use Library
+
+Tippyjs,
+Axios,
+ClassNames
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
