@@ -35,7 +35,6 @@ function SharePopper({ children }) {
             arrowShare.style = 'display: flex;';
         }
     };
-    console.log('Popper share');
 
     return (
         <Tippy

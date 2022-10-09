@@ -1,12 +1,13 @@
 import classNames from 'classnames/bind';
 import { useRef, useState, memo } from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './Videos.module.scss';
 import { PlayVideoIcon, PauseVideoIcon, VolumeVideoIcon, MuteVideoIcon, FlagIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
-function Videos() {
+function Videos({ data }) {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
 
@@ -18,7 +19,6 @@ function Videos() {
     const refVolumeBar = useRef();
 
     const handleChangeAudio = (e) => {
-        console.log('Current Target', [e.currentTarget]);
         if (refVolumeProgress.current === e.target) {
             currentVolume = (e.target.offsetHeight - e.nativeEvent.offsetY) / e.target.offsetHeight;
             refVideo.current.volume = currentVolume;
@@ -30,14 +30,13 @@ function Videos() {
         if (refVolumeBar.current === e.target) {
             currentVolume = (e.target.offsetHeight - e.nativeEvent.offsetY) / e.target.offsetHeight;
             refVideo.current.volume = currentVolume;
-            console.log('refVolumeBar Click:', refVideo.current.volume);
         }
     };
 
     const handleStartLoadVideo = () => {
         refVideo.current.volume = currentVolume;
     };
-    console.log('re-render');
+
     const handleChangeStateVolume = () => {
         if (refVideo.current.volume > 0.1) {
             refVolumeBar.current.style.transform = `scaleY(${refVideo.current.volume})`;
@@ -83,17 +82,17 @@ function Videos() {
                     <img
                         loading="lazy"
                         draggable={false}
-                        src={require('../../../assets/images/img-video-1.jpeg')}
+                        src={data.img_placeholder_video}
                         className={cx('img-poster')}
-                        alt="đủ để ăn đứt chủ link nhạc."
+                        alt={data.content_video}
                     />
                     <div className={cx('basic-player-wrapper')}>
                         <div className={cx('player-container')}>
                             <video
                                 ref={refVideo}
                                 crossOrigin="anonymous"
-                                poster={require('../../../assets/images/img-video-1.jpeg')}
-                                src={require('../../../assets/videos/video-1.mp4')}
+                                poster={data.img_placeholder_video}
+                                src={data.url_video}
                                 onVolumeChange={handleChangeStateVolume}
                                 onLoadStart={handleStartLoadVideo}
                             ></video>
@@ -145,5 +144,9 @@ function Videos() {
         </div>
     );
 }
+
+Videos.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 
 export default memo(Videos);
