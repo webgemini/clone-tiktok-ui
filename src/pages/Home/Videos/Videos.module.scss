@@ -172,12 +172,6 @@
   }
 }
 
-@media screen and (max-width: 47.9375em) {
-  .video-card-container {
-    width: calc(380px + (100vw - 480px) / 288 * 20)  ;
-  }
-}
-
 @media screen and (max-width: 29.9375em) {
   .video-card-container {
     width: calc(100vw - 32px - 60px);
