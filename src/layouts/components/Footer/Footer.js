@@ -9,6 +9,8 @@ import images from '~/assets/images';
 const cx = classNames.bind(styles);
 
 function Footer() {
+    const dateCurrent = new Date();
+
     return (
         <div className={cx('footer-wrapper')}>
             <div className={cx('footer-header')}>
@@ -118,7 +120,7 @@ function Footer() {
                         <option value="vietnamese">Tiếng việt</option>
                     </select>
                 </div>
-                <div className={cx('bottom-copyright')}>© 2022 Tiktok</div>
+                <div className={cx('bottom-copyright')}>© {dateCurrent.getFullYear()} Tiktok</div>
             </div>
         </div>
     );

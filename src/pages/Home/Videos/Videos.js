@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useRef, useState, memo } from 'react';
+import { useRef, useState, memo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Videos.module.scss';
@@ -22,14 +22,14 @@ function Videos({ data }) {
         if (refVolumeProgress.current === e.target) {
             currentVolume = (e.target.offsetHeight - e.nativeEvent.offsetY) / e.target.offsetHeight;
             refVideo.current.volume = currentVolume;
-            console.log('refVolumeProgress Click:', refVideo.current.volume);
-            refVolumeContainer.current.setAttribute('ariaValueText', refVideo.current.volume * 100);
+            refVolumeContainer.current.setAttribute('ariaValueText', refVideo.current.volume);
         }
     };
     const handleChangeAudioBar = (e) => {
         if (refVolumeBar.current === e.target) {
             currentVolume = (e.target.offsetHeight - e.nativeEvent.offsetY) / e.target.offsetHeight;
             refVideo.current.volume = currentVolume;
+            refVolumeContainer.current.setAttribute('ariaValueText', refVideo.current.volume);
         }
     };
 
@@ -38,20 +38,23 @@ function Videos({ data }) {
     };
 
     const handleChangeStateVolume = () => {
-        if (refVideo.current.volume > 0.1) {
-            refVolumeBar.current.style.transform = `scaleY(${refVideo.current.volume})`;
-            refVolumeCircle.current.style.transform = `translateY(${
-                -refVideo.current.volume * refVolumeBar.current.offsetHeight + refVolumeCircle.current.offsetHeight
-            }px)`;
+        const video = refVideo.current;
+        const volumeCircle = refVolumeCircle.current;
+        const volumeBar = refVolumeBar.current;
+
+        if (video.volume > 0.1 && video.volume <= 1) {
+            volumeBar.style.transform = `scaleY(${video.volume})`;
+            volumeCircle.style.transform = `translateY(${-video.volume * 48 + 12}px)`;
         }
-        if (refVideo.current.volume < 0.1) {
-            refVolumeBar.current.style.transform = `scaleY(${refVideo.current.volume})`;
-            refVolumeCircle.current.style.transform = `translateY(${
-                -refVideo.current.volume * refVolumeBar.current.offsetHeight
-            }px)`;
+        if (video.volume < 0.1) {
+            volumeBar.style.transform = `scaleY(${video.volume})`;
+            volumeCircle.style.transform = `translateY(${-video.volume * 48}px)`;
         }
-        if (!isMuted) {
-            currentVolume = refVideo.current.volume;
+        if (video.volume < 0.1) {
+            video.volume = 0;
+        }
+        if (video.volume > 0.96 || video.volume >= 1) {
+            video.volume = 1;
         }
     };
 
@@ -102,20 +105,18 @@ function Videos({ data }) {
                 <div className={cx('play-control-wrapper')} onClick={handlePlayingVideo}>
                     {isPlaying ? <PauseVideoIcon /> : <PlayVideoIcon />}
                 </div>
-                <div ref={refVolumeContainer} className={cx('volume-control-wrapper')}>
-                    <div
-                        className={cx('volume-control')}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                        tabIndex={0}
-                        aria-valuenow={currentVolume * 100}
-                        aria-valuetext={`${currentVolume * 100}% volume`}
-                    >
+                <div
+                    ref={refVolumeContainer}
+                    className={cx('volume-control-wrapper')}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    tabIndex={0}
+                >
+                    <div className={cx('volume-control')} aria-valuemin={0} aria-valuemax={100} tabIndex={0}>
                         <div
                             ref={refVolumeProgress}
                             className={cx('volume-control-progress')}
                             onMouseDown={handleChangeAudio}
-                            onDoubleClick={() => false}
                         ></div>
                         <div ref={refVolumeCircle} className={cx('volume-control-circle')}></div>
                         <div

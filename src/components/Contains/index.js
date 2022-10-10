@@ -154,7 +154,7 @@ export const videosForYou = [
         id: 1,
         uid: 168,
         content_video: 'đủ để ăn đứt chủ link nhạc.',
-        tags_content: '#taybannha🇪🇸, #congchuataybannha👑, #princessleonor',
+        tags_content: '#taybannha🇪🇸 #congchuataybannha👑 #princessleonor',
         music_content: 'nhạc chế - Trung Ruồi',
         url_video: require('~/assets/videos/video-1.mp4'),
         img_placeholder_video: require('~/assets/images/imgVideo/img-1.jpeg'),
