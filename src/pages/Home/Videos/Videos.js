@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useRef, useState, memo, useEffect } from 'react';
+import { useRef, useState, memo } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Videos.module.scss';
